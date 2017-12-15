@@ -1,95 +1,127 @@
 Docker
 ======
 
-### Insecure registries:
+## Docker Daemon config
+Add the registries in Docker daemon config.
+ 
 ```
+// Registries of University of La Rochelle
 http://registry.univ-lr.fr:81
 https://registry.univ-lr.fr:81
 ```
 
-### Registry mirrors:
 ```
+// Registry mirrors
 http://registry.univ-lr.fr:81
 ```
-
-### Ouvrez un terminal
+## Access to remote docker container
+### Get container
+Get a docker container.
 ```
-docker pull registry.univ-lr.fr:81/iutlr-info/devbox
-```
-
-### Lancement du container Docker sous mac
-```
-docker run -it --rm -v C:\Users\Hp\Dropbox\IUTLR\WEB\CS:/var/www/html/www -p 9998:80 --name devbox registry.univ-lr.fr:81/iutlr-info/devbox
+// University of La Rochelle container addres   -> registry.univ-lr.fr:81/iutlr-info/devbox
+docker pull [container name] 
 ```
 
-### Lancement du nouveau container
+### Start local server
 ```
-docker run -it -v C:\Users\Hp\Dropbox\IUTLR\WEB\CS:/var/www/html/www -p 9998:80 --name devbox registry.univ-lr.fr:81/iutlr-info/devbox
+/**
+ * My values
+ * 
+ * local path               -> C:\Users\Hp\Dropbox\IUTLR\WEB\CS
+ * remote path              ->/var/www/html/www
+ * ports                    -> 9998:80
+ * my container name        -> devbox
+ * Registry of La Rochelle  -> registry.univ-lr.fr:81/iutlr-info/devbox
+ */
+
+// Option 1
+docker run -it --rm -v [local path:remote path] -p [port:port] --name [container name] [registry name]
+
+// Option 2
+docker run -it -v [local path:remote path] -p [port:port] --name [container name] [registry name]
 ```
 
-### Connexion au terminal du container Docker
+### Connection to local server
 ```
-docker exec -it devbox bash
+/**
+ * container name   -> devbox
+ */
+docker exec -it [container name] bash
 ```
 
-### Testez sur un navigateur 127.0.0.1:9998
+### Type in your browser 127.0.0.1:[port] 
+Create a php file in your local path to test your php server installation.
 ```php
 <?php
-echo phpInfo();
+    echo phpInfo();
 ?>
 ```
 
-### Installation de wget
+## Add PHPUnit
+Add PHPUnit to your local project.
+
+### Install wget
+Update apt-get to download wget. wget will be used to download PHPUnit.
 ```
 apt-get update
 apt-get install wget
 ```
 
-### installation de phpunit
+### Install PHPUnit
+Install phpunit.phar and change the user privileges to move the file to your global usage. 
 ```
 wget https://phar.phpunit.de/phpunit.phar
 chmod +x phpunit.phar
 mv phpunit.phar /usr/local/bin/phpunit
 ```
 
-### Voir la version de phpunit
+### See PHPUnit version
 ```
 phpunit --version
 ```
 
-### Intégrer phpunit en dev sur notre projet
+### Add PHPUnit to your project
+```
 composer require --dev phpunit/phpunit
-
-### Entrer au repertoire qui contient les fichier de configuration
-```
-cd C:\Users\Hp\Dropbox\IUTLR\WEB\CS\docker-machine-pull
 ```
 
-### Verifier les settings de docker
+## Build docker containers from configuration files
+### Go to configuration folder
+```
+// my configuration path    -> C:\Users\Hp\Dropbox\IUTLR\WEB\CS\docker-machine-pull
+cd [configuration path]
+```
+
+### Check docker settings
 * files sharing
 * daemon
 
-### Construction de l'envirenement
+### Build environment
 ```
 docker-compose build
 ```
 
-### Voir les images docker
+### See docker images
 ```
 docker images
 ```
 
-### Construction de conteneurs pour les services
+### Start local server
 ```  
 docker-compose up
 ```
 
-### Voir les conteneurs
+### See docker containers
 ```
 docker ps -a
 ```
 
-### Entrer dans le conteneur
+### Connection to local server
 ``` 
-docker exec -it lpirm-dfs-apachephp bash
+/*
+ * LPIRM containers
+ * lpirm-dfs-apachephp
+ * lpirm-dfs-mysql
+ */
+docker exec -it [container name] bash
 ```

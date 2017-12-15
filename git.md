@@ -1,4 +1,4 @@
-Git
+Git commands
 ===
 
 ### Init user access
@@ -7,10 +7,21 @@ git config --global user.email "your@email.com"
 git config --global user.name "your name"
 ```
 
+### Init local repository
+```git
 git init
-git add <fileName>
+```
+
+### Add local files to local repository 
+```git
+git add [fileName] // Add a specific file
 git add .
+```
+
+### Commit changes
+```git
 git commit -m "comment of the modification"
+```
 
 git remote add origin <<URL.git>> 
 git push -u origin master 
