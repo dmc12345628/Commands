@@ -1,42 +1,63 @@
-Git commands
-===
+Git Tutorial
+============
 
-### Init user access
+## User access
+Set user access from local repository to remote repository
 ```git
 git config --global user.email "your@email.com"
 git config --global user.name "your name"
 ```
 
-### Init local repository
+## Prepare local repository
+* Init local repository
 ```git
 git init
 ```
 
-### Add local files to local repository 
+* Connect to remote repository
+```
+git remote add origin <<URL.git>>
+```
+
+* Add local files to local repository 
 ```git
 git add [fileName] // Add a specific file
 git add .
 ```
 
-### Commit changes
+* Commit changes
 ```git
 git commit -m "comment of the modification"
 ```
 
-git remote add origin <<URL.git>> 
-git push -u origin master 
-git push --set-upstream origin <<BRANCH NAME>>
+* Add local changes to remote repository
+``` 
+git push -u origin master
+git push --set-upstream origin [Branche name] 
+```
 
-git checkout -b <<BRANCH NAME>>
-git checkout <<branch name>> (or <<commit name>>)
-git chechkout .
-git reset --hard 
-git merge <<MASTER>> (or <<BRANCH>>)
-git pull origin master 
-	
-git clone URL.git <<FolderName>>
+## Working with branches
+* Create a branch
+```
+git checkout -b [Branch name]
+```
 
-COMMIT = Project version
+* Change to another branche or commit
+```
+git checkout [branch name/commit name]
+```
 
+* Discard all not committed changes
+```
+git checkout .
+```
+
+```
 // archive projet to zip
 git archive HEAD --format=zip > /tmp/archive.zip
+git reset --hard
+
+git merge [master/branch name]
+git pull origin master 
+git clone URL.git [FolderName]
+```
