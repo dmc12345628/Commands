@@ -10,7 +10,7 @@ chrome://inspect
 ```
 
 ### Sites datas
-See the sites data like local storage, cookies, etc.
+See sites data like local storage, cookies, etc.
 ```
 chrome://settings/siteData
 ```

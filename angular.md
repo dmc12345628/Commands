@@ -1,27 +1,31 @@
 Angular
 =======
 
-### Install TypeScript compilator
+## TypeScript
+
+* Install
 ```
 npm install typescript -g
 ```
 
-### Compile file
+* Compile file
 ```
 tsc [fichier].ts
 ```
 
-### Install angular client
+## Angular-CLI
+
+* Install Angular-CLI
 ```
 npm install -g @angular/cli
 ```
 
-### Create new angular project
+* Create new angular project
 ```
 ng new my-dream-app
 ```
 
-### Start server
+* Start server
 ```
 ng serve
 ```
