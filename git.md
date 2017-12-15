@@ -1,9 +1,11 @@
 Git
 ===
 
-### Init 
+### Init user access
+```git
 git config --global user.email "your@email.com"
 git config --global user.name "your name"
+```
 
 git init
 git add <fileName>
