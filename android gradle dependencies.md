@@ -62,3 +62,25 @@ dependencies {
     compile 'com.thebluealliance:spectrum:0.7.1'
 }
 ```
+
+## Firebase
+### Realtime Database
+Save and retrieve data stored in a JSON tree structure.
+
+#### Add the Realtime Database to your app
+* build.gradle (project-level)
+Add Firebase Gradle buildscript dependency
+```
+classpath 'com.google.gms:google-services:3.1.0'
+```
+
+* app/build.gradle
+Add Firebase plugin for Gradle
+```
+apply plugin: 'com.google.gms.google-services'
+```
+
+build.gradle will include these new dependencies:
+```
+compile 'com.google.firebase:firebase-database:11.6.2'
+```

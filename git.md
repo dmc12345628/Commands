@@ -33,6 +33,10 @@ git commit -m "comment of the modification"
 * Add local changes to remote repository
 ``` 
 git push -u origin master
+```
+
+* Add local changes in new local branch. It adds the local branch to remote repository.
+```
 git push --set-upstream origin [Branche name] 
 ```
 
