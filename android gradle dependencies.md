@@ -63,6 +63,17 @@ dependencies {
 }
 ```
 
+### [Room Persistence Library](https://developer.android.com/topic/libraries/architecture/room.html)
+The Room persistence library provides an abstraction layer over SQLite to allow fluent database access while harnessing the full power of SQLite.
+
+#### Usage
+```gradle
+dependencies {
+    implementation "android.arch.persistence.room:runtime:1.0.0"
+    annotationProcessor "android.arch.persistence.room:compiler:1.0.0"
+}
+```
+
 ## Firebase
 ### Realtime Database
 Save and retrieve data stored in a JSON tree structure.
@@ -80,7 +91,7 @@ Add Firebase plugin for Gradle
 apply plugin: 'com.google.gms.google-services'
 ```
 
-build.gradle will include these new dependencies:
+* build.gradle will include these new dependencies:
 ```
 compile 'com.google.firebase:firebase-database:11.6.2'
 ```
