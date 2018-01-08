@@ -125,3 +125,26 @@ docker ps -a
  */
 docker exec -it [container name] bash
 ```
+
+## Installer FOS
+Dans le conteneur PHP-Symfony, dans le dossier du projet :
+```
+composer require friendsofsymfony/rest-bundle "^2.1"
+```
+
+### Activer le bundle dans Sumfony en editant le fichier AppKernel
+app/AppKernel.php
+
+### Sérialisation des réponses par FOS
+#### Activer le Serializer par default de Symfony
+app/config/config.yml
+```yaml
+framework:
+	serializer:
+		enabled: true
+```
+
+#### Tester la configuration
+```
+php bin/console debug:config fos_rest
+```
