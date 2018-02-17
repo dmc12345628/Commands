@@ -106,6 +106,21 @@ docker-compose build
 docker images
 ```
 
+### Stop containers
+```
+docker stop $(docker ps -a -q)
+```
+
+### Delete all containers
+```
+docker rm $(docker ps -a -q)
+```
+
+### Delete all images
+```
+docker rmi $(docker images -q)
+```
+
 ### Start local server
 ```  
 docker-compose up
@@ -148,3 +163,26 @@ framework:
 ```
 php bin/console debug:config fos_rest
 ```
+
+### Routage automatique
+Voir les routes
+```
+php bin/console debug:router
+```
+
+cd var/lib/mysql
+
+mysql -D cine -p
+
+##
+$cinema                         $salles
+appBundle\Entity\Salle          appBundle\Entity\Cinema
+
+
+Opération souhaitée                         Verbe HTTP      URI
+- Récupérer toutes les salles d'un cinéma        GET         /cinemas/{id}/salles
+- Récupérer une salle d'un cinéma                GET         /cinemas/{id}/salles/{id}
+- Créer une nouvelle salle pour un cinéma        POST         /cinemas/{id}/salles
+- Supprimer une salle d'un cinéma                DELETE         /cinemas/{id}/salles/{id}
+- MAJ complète d'une salle d'un cinéma            PUT         /cinemas/{id}/salles/{id}
+- MAJ partielle d'une salle d'un cinéma            PATCH         /cinemas/{id}/salles/{id}

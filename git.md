@@ -58,10 +58,16 @@ git checkout .
 
 ```
 // archive projet to zip
-git archive HEAD --format=zip > /tmp/archive.zip
-git reset --hard
+git archive HEAD --format=zip > archive.zip
+git reset --hard <sha1-commit-id>
+git push origin HEAD --force
 
 git merge [master/branch name]
 git pull origin master 
 git clone URL.git [FolderName]
 ```
+
+
+git remote set-url origin
+
+git remote -v

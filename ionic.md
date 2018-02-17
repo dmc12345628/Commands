@@ -21,6 +21,9 @@ ionic serve
 // Déployer l'application sur android
 ionic cordova run android
 
+// Déployer l'application sur android
+ionic cordova run android --device --livereload
+
 // Installer angular google map
 npm install @ngui/map @types/googlemaps --save
 
