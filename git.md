@@ -8,6 +8,13 @@ git config --global user.email "your@email.com"
 git config --global user.name "your name"
 ```
 
+## Git LFS
+
+```git
+git config lfs.https://github.com/dmc12345628/BattleSheep.git/info/lfs.locksverify false
+git config --global credential.helper wincred
+```
+
 ## Prepare local repository
 * Init local repository
 ```git
