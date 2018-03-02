@@ -2,7 +2,8 @@ Ionic
 =====
 
 ## Quick started
-### Install Cordova et Ionic
+
+### Install Cordova and Ionic
 Install Cordova and Ionic CLI with NPM
 ```
 npm install -g cordova ionic

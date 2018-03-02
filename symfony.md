@@ -1,10 +1,15 @@
 Symfony
+=======
 
-// Créer un projet symfony
+## Create symfony project
+```
 composer create-project symfony/framework-standard-edition [nomproject]
+// or
 symfony new [nomproject] 3.1
+```
 
-// installation
+### During installation
+```
 database_host (127.0.0.1): localhost
 database_port (null):
 database_name (symfony): [projectname]
@@ -15,9 +20,10 @@ mailer_host (127.0.0.1):
 mailer_user (null):
 mailer_password (null):
 secret (ThisTokenIsNotSoSecretChangeIt):
-
-// Nous allons modifier le fichier app_dev.php, en mettant en commentaire
 ```
+
+### Modify app_dev.php file (add comments)
+```php
 /*if (isset($_SERVER['HTTP_CLIENT_IP])
 ¦¦ isset($_SERVER['HTTP_X_FORWARDED_FOR'])
 ¦¦ !(in_array(@$_SERVER['REMOTE_ADDR'], ['127.0.0.1','::1'], true) ¦¦ PHP_SAPI === 'cli-server')
@@ -28,11 +34,17 @@ secret (ThisTokenIsNotSoSecretChangeIt):
 */
 ```
 
-// Pour voir la liste des commandes possibles
-php bin/console
+## Console
 
-// Créer un bundle
+### See all possible commands
+```
+php bin/console
+```
+
+### Create new Bundle
+```
 php bin/console generate:bundle [Bundle]
+```
 
 // Créer un contrôleur
 php bin/console generate:controller [Bundle:Entity]
@@ -63,3 +75,9 @@ php bin/console doctrine:generate:form [Bundle:Entity]
 
 // see routes
 php bin/console debug:router
+
+// asstets install
+bin/console assets:install --symlink
+
+### Clear console
+php bin/console cache:clear --no-warmup -e prod

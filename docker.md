@@ -135,7 +135,8 @@ docker ps -a
 ``` 
 /*
  * LPIRM containers
- * lpirm-dfs-apachephp
+ * lpirm-dfs-wscine
+ * lpirm-dfs-projcine
  * lpirm-dfs-mysql
  */
 docker exec -it [container name] bash
