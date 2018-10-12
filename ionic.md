@@ -34,8 +34,16 @@ ionic cordova platform add android
 
 ### Run project in android device
 ```
-ionic cordova run android
+ionic cordova run android --prod --release
 ionic cordova run android --device --livereload
+ionic cordova build android --prod --release
+```
+### Sign Android APK
+```
+keytool -genkey -v -keystore my-release-key.keystore -keyalg RSA -keysize 2048 -validity 10000 -alias my-alias
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore app-release-unsigned.apk my-alias
+zipalign -v 4 app-release-unsigned.apk HelloWorld.apk
+apksigner verify HelloWorld.apk
 ```
 
 ## Web platform 
