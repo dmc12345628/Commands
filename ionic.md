@@ -37,6 +37,7 @@ ionic cordova platform add android
 ionic cordova run android --prod --release
 ionic cordova run android --device --livereload
 ionic cordova build android --prod --release
+ionic cordova run android --prod --release -- -- --keystore=my-release-key.keystore --alias=my-alias
 ```
 ### Sign Android APK
 ```
