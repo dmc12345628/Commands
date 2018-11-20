@@ -18,6 +18,7 @@ ionic -v
 ### Create a project
 ```
 ionic start [projet_name]
+ionic start myApp tabs --type=angular // ionic 4
 ```
 
 ### Add page
