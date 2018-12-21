@@ -149,6 +149,10 @@ docker exec -it [container name] bash
 ```
 docker-compose down
 ```
+2. Delete all containers using the following command
+```
+docker rm -f $(docker ps -a -q)
+```
 
 
 ## Installer FOS
