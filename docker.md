@@ -142,6 +142,15 @@ docker ps -a
 docker exec -it [container name] bash
 ```
 
+### Restart of Docker
+
+#### Procedure
+1. Stop the container(s) using the following command
+```
+docker-compose down
+```
+
+
 ## Installer FOS
 Dans le conteneur PHP-Symfony, dans le dossier du projet :
 ```
