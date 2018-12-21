@@ -157,6 +157,10 @@ docker rm -f $(docker ps -a -q)
 ```
 docker volume rm $(docker volume 1s -q)
 ```
+4. Restart the containers using the following command
+```
+docker-compose up -d
+```
 
 
 ## Installer FOS
