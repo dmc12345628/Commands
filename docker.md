@@ -153,6 +153,10 @@ docker-compose down
 ```
 docker rm -f $(docker ps -a -q)
 ```
+3. Delete all volumes using the following command
+```
+docker volume rm $(docker volume 1s -q)
+```
 
 
 ## Installer FOS
